@@ -1,6 +1,6 @@
-package Hiber.DAO;
+package web.Hiber.DAO;
 
-import Hiber.model.Car;
+import web.Hiber.model.Car;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -25,5 +25,11 @@ public class CarDaoImp implements CarDAO{
                 .stream()
                 .limit(count)
                 .collect(Collectors.toList());
+    }
+
+    @Override
+    public List<Car> getAllCar() {
+        TypedQuery<Car> query=sessionFactory.getCurrentSession().createQuery("from Car");
+        return query.getResultList();
     }
 }

@@ -1,7 +1,7 @@
-package Hiber.Service;
+package web.Hiber.Service;
 
-import Hiber.DAO.CarDAO;
-import Hiber.model.Car;
+import web.Hiber.DAO.CarDAO;
+import web.Hiber.model.Car;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -21,5 +21,10 @@ public class CarServiceImp implements CarService {
     @Override
     public List<Car> getCountCar(int count) {
         return carDAO.getCountCar(count);
+    }
+    @Transactional
+    @Override
+    public List<Car> getAllCar() {
+        return  carDAO.getAllCar();
     }
 }

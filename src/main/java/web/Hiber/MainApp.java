@@ -1,8 +1,8 @@
-package Hiber;
+package web.Hiber;
 
-import Hiber.Config.AppConfig;
-import Hiber.Service.CarService;
-import Hiber.model.Car;
+import web.Hiber.Config.AppConfig;
+import web.Hiber.Service.CarService;
+import web.Hiber.model.Car;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import java.util.List;
@@ -11,7 +11,6 @@ public class MainApp {
     public static void main(String[] args) {
         AnnotationConfigApplicationContext context =
                 new AnnotationConfigApplicationContext(AppConfig.class);
-
         CarService carService = context.getBean(CarService.class);
 //        carService.add(new Car("Tesla",312903,335.6f));
 //        carService.add(new Car("Ford",32,155.0f));
