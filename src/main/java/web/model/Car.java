@@ -1,13 +1,6 @@
-package web.Hiber.model;
+package web.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-
-@Entity
 public class Car {
-    @Id @GeneratedValue
-    private int id;
     private String model;
     private int series;
     private float hP;
@@ -46,14 +39,11 @@ public class Car {
         this.hP = hP;
     }
 
-    public int getId() {
-        return id;
-    }
+
 
     @Override
     public String toString() {
         return "Car{" +
-                "id=" + id +
                 ", model='" + model + '\'' +
                 ", series=" + series +
                 ", hP=" + hP +
